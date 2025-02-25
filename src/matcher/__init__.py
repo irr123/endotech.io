@@ -62,8 +62,6 @@ async def _main(
     original_reports_formatted = ", ".join(keys)
     b.log.debug("Collected originals (%d): %s", len(keys), original_reports_formatted)
 
-    return
-
     watched: Worksheet = wb["Watched"]
     for row in watched:
         for num, cell in enumerate(row):
