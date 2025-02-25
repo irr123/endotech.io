@@ -62,6 +62,8 @@ async def _main(
     original_reports_formatted = ", ".join(keys)
     b.log.debug("Collected originals (%d): %s", len(keys), original_reports_formatted)
 
+    return
+
     watched: Worksheet = wb["Watched"]
     for row in watched:
         for num, cell in enumerate(row):
@@ -75,6 +77,8 @@ async def _main(
             prompt = (
                 f"There is list of reports: {original_reports_formatted}."
                 f" Which report from the list is meant by '{value}'?"
+                f" If there is more than one option, choose most watched and"
+                f" affecting markets."
             )
             resp, result = await openai.complete(prompt, SYSTEM_PROMPT)
             b.log.info("OpenAI: %s -> %s", prompt, resp)
