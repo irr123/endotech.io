@@ -9,9 +9,10 @@ import typing as _t
 class _Hidden:
     exclude_logging = (
         "asyncio",
-        "httpcore.http11",
-        "openai._base_client",
         "httpcore.connection",
+        "httpcore.http11",
+        "httpx",
+        "openai._base_client",
     )
     default_conf = {
         "OPENAI_MODEL": "gpt-4o-mini",
