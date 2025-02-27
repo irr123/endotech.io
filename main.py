@@ -3,7 +3,7 @@
 import argparse
 import asyncio
 
-from src import (
+from src.endotech import (
     bootstrap,
     matcher,
 )
